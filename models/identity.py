@@ -64,14 +64,25 @@ class Identities:
         return str(self.identities)
 
 
-    def gen_identities(self, num):
+    def __len__(self):
+        """Len representation."""
+        return len(self.identities)
+
+
+    def gen_x_identities(self, num):
         """Generates <num> identities with faker names."""
 
         for i in range(num):      # pylint: disable=unused-variable
             name = f"{faker.first_name().lower()}"
             email = f"{name}.{faker.last_name().lower()}@{faker.domain_name()}"
-            identity = Identity(name, email)
-            self.identities.append(identity)
+            self.gen_identity(name, email)
+          
+
+    def gen_identity(self, name, email):
+        """Generate identity with data."""
+
+        identity = Identity(name, email)
+        self.identities.append(identity)
 
 
     def search_by_name(self, name):
