@@ -1,8 +1,10 @@
 """Docs."""
 
+
 def test_name():
     """Description"""
     assert True
+
 
 def test_2():
     """Example"""

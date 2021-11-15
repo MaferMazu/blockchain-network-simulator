@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 """Package metadata for simulator."""
-import os
+from os import path
 
 from setuptools import setup
 
 
-with open(os.path.join(os.path.dirname(__file__), 'README.md'), 'r', encoding='utf-8') as f:
+with open(path.join(path.dirname(__file__), 'README.md'), 'r', encoding='utf-8') as f:
     README = f.read()
 
 
@@ -17,8 +17,8 @@ def load_requirements(*requirements_paths):
         list: Requirements file relative path strings
     """
     requirements = set()
-    for path in requirements_paths:
-        with open(path, 'r', encoding='utf-8') as requirements_file:
+    for my_path in requirements_paths:
+        with open(my_path, 'r', encoding='utf-8') as requirements_file:
             requirements.update(
                 line.split('#')[0].strip() for line in requirements_file.readlines()
                 if is_requirement(line.strip())

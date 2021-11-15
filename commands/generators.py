@@ -13,11 +13,3 @@ def gen_transac():
 def gen_identi():
     """Docs."""
     click.echo("genIdenti")
-
-
-class Identity:
-    """Docs."""
-
-    def __init__(self,name,password):
-        self.name=name
-        self.password=password

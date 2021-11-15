@@ -18,7 +18,10 @@ quality: ## check coding style with pycodestyle and pylint
 	pylint commands *.py
 	pycodestyle commands *.py
 	pydocstyle commands *.py
-	isort --check-only --diff --recursive commands *.py
+	pylint models *.py
+	pycodestyle models *.py
+	pydocstyle models *.py
+	isort --check-only --diff models *.py
 	python setup.py bdist_wheel
 	make selfcheck
 
